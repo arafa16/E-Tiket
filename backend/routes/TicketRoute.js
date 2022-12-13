@@ -6,13 +6,13 @@ import {
     updateTicket,
     deleteTicket,
 } from '../controllers/Tickets.js';
-
+import { verifyUser, adminOnly } from '../meddleware/AuthUser.js';
 const router = express.Router();
 
-router.get('/tickets', getTickets);
-router.get('/tickets/:id', getTicketById);
-router.post('/tickets', createTicket);
-router.patch('/tickets/:id', updateTicket);
-router.delete('/tickets/:id', deleteTicket);
+router.get('/tickets', verifyUser, getTickets);
+router.get('/tickets/:id', verifyUser, getTicketById);
+router.post('/tickets', verifyUser, createTicket);
+router.patch('/tickets/:id', verifyUser, updateTicket);
+router.delete('/tickets/:id', verifyUser, deleteTicket);
 
 export default router;
