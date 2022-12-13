@@ -2,9 +2,17 @@ import express from "express";
 import cors from "cors";
 import session from "express-session";
 import dotenv from "dotenv";
+import UserRoute from './routes/UserRoute.js';
+import TicketRoute from './routes/TicketRoute.js';
+// import db from "./Config/Database.js";
+
 dotenv.config();
 
 const app = express();
+
+// (async()=>{
+//     await db.sync();
+// })();
 
 app.use(session({
     secret: process.env.SESS_SECRET,
@@ -21,7 +29,8 @@ app.use(cors({
 }));
 
 app.use(express.json());
-
+app.use(UserRoute);
+app.use(TicketRoute);
 app.listen(process.env.APP_PORT, ()=> {
     console.log('Server up and running....')
 });
