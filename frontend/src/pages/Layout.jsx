@@ -4,10 +4,10 @@ import Navbar from '../components/Navbar'
 const Layout = (props) => {
     const {children, menu} = props;
     return (
-        <div>
+        <div className='relative '>
             <Navbar menuLayout={menu} />
             <div className='flex justify-center'>
-                <div className='w-[98%] mt-6 bg-white drop-shadow-xl p-4'>
+                <div className='w-full min-h-screen bg-gray-200 pt-10'>
                     <main>{children}</main>
                 </div>
             </div>

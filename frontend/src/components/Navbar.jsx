@@ -46,34 +46,37 @@ const Navbar = (props) => {
     });
 
     return (
-        <div className='relative z-10'>
-            <div className='w-full h-10 bg-white flex justify-between px-10 items-center drop-shadow-lg text-gray-600'>
-                <div className='flex justify-start space-x-6 items-center'>
-                    <div className='w-10'>
-                        <img src={Logo} alt="" />
-                    </div>
-                    <div ref={menuRef}>
-                        <div onClick={()=>handleClickMenu()}>
-                            <BigMenu openMenu={openMenu} />
+        <div className='fixed w-full'>
+            <div className='relative z-10'>
+                <div className='w-full h-10 bg-white flex justify-between px-10 items-center drop-shadow-lg text-gray-600'>
+                    <div className='flex justify-start space-x-6 items-center'>
+                        <div className='w-10'>
+                            <img src={Logo} alt="" />
                         </div>
-                        <div className='z-40'>
-                            <ShowMenu open={openMenu} click={()=>handleClickMenu()} menu={setMenu}/>
+                        <div ref={menuRef}>
+                            <div onClick={()=>handleClickMenu()}>
+                                <BigMenu openMenu={openMenu} />
+                            </div>
+                            <div className='z-40'>
+                                <ShowMenu open={openMenu} click={()=>handleClickMenu()} menu={setMenu}/>
+                            </div>
+                        </div>
+                        <div className='pl-10'>
+                            <SubMenu menu={menu} />
                         </div>
                     </div>
-                    <div className='pl-10'>
-                        <SubMenu menu={menu} />
-                    </div>
-                </div>
-                <div ref={userMenuRef}>
-                    <div onClick={()=>handleClickUserMenu()}>
-                        <HiOutlineUser className='text-[20px] cursor-pointer' />
-                    </div>
-                    <div>
-                        <ShowUserMenu open={openUserMenu} />
+                    <div ref={userMenuRef}>
+                        <div onClick={()=>handleClickUserMenu()}>
+                            <HiOutlineUser className='text-[20px] cursor-pointer' />
+                        </div>
+                        <div>
+                            <ShowUserMenu open={openUserMenu} />
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        
     )
 }
 
