@@ -112,7 +112,7 @@ export const updateTicket = async(req, res) => {
     }
 }
 
-export const deleteTicket = async(req, res) => {
+export const deleteTicket = async(req, res) => {        
     try {
         const ticket = await Tickets.findOne({
             where:{
