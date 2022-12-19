@@ -14,7 +14,7 @@ const ModalPengajuan = (props) => {
             <div className='bg-white p-4 rounded w-1/2'>
                 <div>
                     <div className='w-full flex justify-between my-4'>
-                        <div className='text-gray-500'>Modal Pengajuan</div>
+                        <div className='text-gray-500'>Form Pengajuan</div>
                         <div className='cursor-pointer hover:text-red-500' onClick={onClouse}><HiOutlineX /></div>
                     </div>
                     <form className=''>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ModalPengajuan from './ModalPengajuan'
+import TablePengaduan from './TablePengaduan';
 
 const PengajuanKendala = () => {
   const [modalCreate, setModalCreate] = useState(false);
@@ -20,7 +21,10 @@ const PengajuanKendala = () => {
                 <button onClick={()=> setModalCreate(true)} className='bg-teal-600 text-white px-2 py-1 rounded-xl text-[12px] hover:bg-teal-400'>+ Create Pengajuan</button>
             </div>
           </div>
-          <hr className='text-red-500 mt-4' />
+          <hr className='mt-4' />
+          <div className='mt-4'>
+            <TablePengaduan />
+          </div>
         </div>
       </div>
       <ModalPengajuan onClouse={handleClickMenu} visible={modalCreate} />
